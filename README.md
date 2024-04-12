@@ -1,16 +1,49 @@
-# todo_app
+# Flutter To-Do App with Hive DB
+This is a mobile to-do app built using Flutter with Hive as the database. The app allows users to manage their tasks efficiently, with features including adding, editing, deleting, and marking tasks as completed.
 
-A new Flutter project.
+# Features
+- Add new tasks
+- Edit existing tasks
+- Delete tasks
+- Mark tasks as completed
+- Persistent storage using Hive database
+- Clean and intuitive user interface
 
-## Getting Started
+# Getting Started
+To run this app on your local machine, follow these steps:
 
-This project is a starting point for a Flutter application.
+Clone this repository:
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+git clone https://github.com/GLartey97/todo_app.git
+```
+Navigate to the project directory:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```bash
+cd todo_app
+```
+Install dependencies:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+flutter pub get
+```
+Run the app:
+
+```bash
+flutter run
+```
+
+# Contributing
+Contributions are welcome! If you find any bugs or have suggestions for improvement, please open an issue or submit a pull request.
+
+# License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+# Author
+### Name: Gabriel Humphrey Lartey
+### Email: gabriellartey16@gmail
+
+
+
+
+
