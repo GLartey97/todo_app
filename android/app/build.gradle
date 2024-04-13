@@ -24,8 +24,10 @@ if (flutterVersionName == null) {
 
 android {
     namespace "com.example.todo_app"
+    compileSdkVersion 34
     compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
+    
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
