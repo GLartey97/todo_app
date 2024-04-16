@@ -7,7 +7,7 @@ void main(List<String> args) async {
   await Hive.initFlutter();
 
   //open a box
-  var box = await Hive.openBox('mybox');
+  await Hive.openBox('mybox');
 
   runApp(const MyApp());
 }

@@ -4,6 +4,7 @@ import 'package:todo_app/utils/my_button.dart';
 // ignore: must_be_immutable
 class DialogBox extends StatelessWidget {
   DialogBox(this.controller, this.onSave, this.onCancel, {super.key});
+  // ignore: prefer_typing_uninitialized_variables
   final controller;
   VoidCallback onSave;
   VoidCallback onCancel;
