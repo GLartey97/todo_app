@@ -181,7 +181,8 @@ class _HomepageState extends State<Homepage> {
           //To do list
           Padding(
             padding: EdgeInsets.fromLTRB(30, deviceHeight * 0.22, 30, 0),
-            child: Expanded(
+            child: SizedBox(
+              height: deviceHeight * 0.58,
               child: ListView.builder(
                 itemCount: db.toDoList.length,
                 itemBuilder: (context, index) {

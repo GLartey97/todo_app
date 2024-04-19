@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:todo_app/pages/homepage.dart';
+import 'package:todo_app/pages/SplashScreens/splashscreen1.dart';
 
 void main(List<String> args) async {
   //init the hive
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Homepage(),
+      home: SplashScreen1(),
     );
   }
 }
