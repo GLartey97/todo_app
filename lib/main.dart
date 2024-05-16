@@ -3,7 +3,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:todo_app/pages/SplashScreens/splashscreen1.dart';
 
 void main(List<String> args) async {
-  //init the hive
+  //initiate the hive
   await Hive.initFlutter();
 
   //open a box
