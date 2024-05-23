@@ -46,8 +46,6 @@ class _SplashScreen2State extends State<SplashScreen2>
     super.dispose();
   }
 
-  Color primaryColor = const Color(0xff8780dd);
-
   @override
   Widget build(BuildContext context) {
     double deviceHeight = MediaQuery.of(context).size.height;
@@ -58,7 +56,8 @@ class _SplashScreen2State extends State<SplashScreen2>
       child: Container(
           height: deviceHeight,
           width: deviceWidth,
-          decoration: BoxDecoration(color: primaryColor),
+          decoration:
+              BoxDecoration(color: Theme.of(context).colorScheme.surface),
           child: Center(
             child: Container(
               height: deviceHeight * 1,
