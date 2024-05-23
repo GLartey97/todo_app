@@ -3,11 +3,13 @@ import 'package:todo_app/utils/my_button.dart';
 
 // ignore: must_be_immutable
 class DialogBox extends StatelessWidget {
-  DialogBox(this.controller, this.onSave, this.onCancel, {super.key});
+  DialogBox(this.controller, this.onSave, this.onCancel,
+      {this.buttonLabel = "Save", super.key});
   // ignore: prefer_typing_uninitialized_variables
   final controller;
   VoidCallback onSave;
   VoidCallback onCancel;
+  final String buttonLabel;
 
   @override
   Widget build(BuildContext context) {
@@ -44,8 +46,8 @@ class DialogBox extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                //Save button
-                MyButton("Save", onSave),
+                //Save/Update button
+                MyButton(buttonLabel, onSave),
 
                 const SizedBox(width: 10),
 

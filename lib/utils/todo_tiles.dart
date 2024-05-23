@@ -3,14 +3,15 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 
 // ignore: must_be_immutable
 class ToDoTile extends StatelessWidget {
-  ToDoTile(
-      this.taskName, this.taskCompleted, this.onChanged, this.deleteFunction,
+  ToDoTile(this.taskName, this.taskCompleted, this.onChanged,
+      this.deleteFunction, this.updateFunction,
       {super.key});
 
   final String taskName;
   final bool taskCompleted;
   Function(bool?)? onChanged;
   Function(BuildContext)? deleteFunction;
+  Function(BuildContext)? updateFunction;
 
   Color primaryColor = const Color(0xff8780dd);
 
@@ -25,6 +26,13 @@ class ToDoTile extends StatelessWidget {
         endActionPane: ActionPane(
           motion: const StretchMotion(),
           children: [
+            SlidableAction(
+              onPressed: updateFunction,
+              icon: Icons.edit,
+              foregroundColor: Colors.grey.shade500,
+              backgroundColor: Colors.white,
+              borderRadius: BorderRadius.circular(12),
+            ),
             SlidableAction(
               onPressed: deleteFunction,
               icon: Icons.delete,
@@ -42,10 +50,11 @@ class ToDoTile extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: const EdgeInsets.only(left: 20),
             child: Row(
               children: [
                 Checkbox(value: taskCompleted, onChanged: onChanged),
+                const SizedBox(width: 5),
                 Text(
                   taskName,
                   style: TextStyle(

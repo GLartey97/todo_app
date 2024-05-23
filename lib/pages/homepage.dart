@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:todo_app/data/database.dart';
 import 'package:todo_app/utils/dialog_box.dart';
+import 'package:todo_app/utils/drawer.dart';
 import 'package:todo_app/utils/todo_tiles.dart';
 import 'package:intl/intl.dart';
 
@@ -62,6 +63,30 @@ class _HomepageState extends State<Homepage> {
     db.updateDatabase();
   }
 
+  void editTask(int index) {
+    _controller.text = db.toDoList[index][0];
+    showDialog(
+        context: context,
+        builder: (context) {
+          return DialogBox(
+            _controller,
+            () {
+              setState(() {
+                db.toDoList[index][0] = _controller.text;
+                _controller.clear();
+              });
+              Navigator.pop(context);
+              db.updateDatabase();
+            },
+            () {
+              _controller.clear();
+              Navigator.pop(context);
+            },
+            buttonLabel: "Update",
+          );
+        });
+  }
+
   //Create new Task
   void createNewTask() {
     showDialog(
@@ -84,13 +109,7 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: primaryColor,
-        leading: const Padding(
-          padding: EdgeInsets.only(left: 30),
-          child: Icon(
-            Icons.menu,
-            color: Colors.white,
-          ),
-        ),
+        iconTheme: const IconThemeData(color: Colors.white),
         title: Text(
           formattedDate,
           style: const TextStyle(color: Colors.white, fontFamily: 'Montserrat'),
@@ -107,6 +126,7 @@ class _HomepageState extends State<Homepage> {
         ],
         elevation: 0,
       ),
+      drawer: MyDrawer(),
       body: Stack(
         children: [
           //Background
@@ -191,6 +211,7 @@ class _HomepageState extends State<Homepage> {
                     db.toDoList[index][1],
                     (value) => checkBoxChanged(value, index),
                     (context) => deleteTask(index),
+                    (context) => editTask(index),
                   );
                 },
               ),
