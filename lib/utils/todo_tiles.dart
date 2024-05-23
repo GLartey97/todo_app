@@ -30,14 +30,14 @@ class ToDoTile extends StatelessWidget {
               onPressed: updateFunction,
               icon: Icons.edit,
               foregroundColor: Colors.grey.shade500,
-              backgroundColor: Colors.white,
+              backgroundColor: Theme.of(context).colorScheme.primary,
               borderRadius: BorderRadius.circular(12),
             ),
             SlidableAction(
               onPressed: deleteFunction,
               icon: Icons.delete,
               foregroundColor: Colors.red.shade300,
-              backgroundColor: Colors.white,
+              backgroundColor: Theme.of(context).colorScheme.primary,
               borderRadius: BorderRadius.circular(12),
             ),
           ],
@@ -46,7 +46,7 @@ class ToDoTile extends StatelessWidget {
           height: deviceHeight * 0.08,
           width: deviceWidth,
           decoration: BoxDecoration(
-            color: primaryColor,
+            color: Theme.of(context).colorScheme.surface,
             borderRadius: BorderRadius.circular(12),
           ),
           child: Padding(
@@ -58,7 +58,7 @@ class ToDoTile extends StatelessWidget {
                 Text(
                   taskName,
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Theme.of(context).colorScheme.primary,
                     fontFamily: 'Poppins',
                     decoration: taskCompleted
                         ? TextDecoration.lineThrough

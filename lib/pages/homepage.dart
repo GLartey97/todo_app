@@ -31,7 +31,6 @@ class _HomepageState extends State<Homepage> {
     super.initState();
   }
 
-  Color primaryColor = const Color(0xff8780dd);
   final _controller = TextEditingController();
 
   //DateTime date = DateTime.now();
@@ -108,32 +107,34 @@ class _HomepageState extends State<Homepage> {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: primaryColor,
-        iconTheme: const IconThemeData(color: Colors.white),
+        backgroundColor: Theme.of(context).colorScheme.surface,
+        iconTheme: IconThemeData(color: Theme.of(context).colorScheme.primary),
         title: Text(
           formattedDate,
-          style: const TextStyle(color: Colors.white, fontFamily: 'Montserrat'),
+          style: TextStyle(
+              color: Theme.of(context).colorScheme.primary,
+              fontFamily: 'Montserrat'),
         ),
         centerTitle: true,
-        actions: const [
+        actions: [
           Padding(
-            padding: EdgeInsets.only(right: 30),
+            padding: const EdgeInsets.only(right: 30),
             child: Icon(
               Icons.timer,
-              color: Colors.white,
+              color: Theme.of(context).colorScheme.primary,
             ),
           ),
         ],
         elevation: 0,
       ),
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
       body: Stack(
         children: [
           //Background
           Container(
             height: deviceHeight,
             width: deviceWidth,
-            color: primaryColor,
+            color: Theme.of(context).colorScheme.surface,
           ),
 
           //Top Layer Items
@@ -142,12 +143,12 @@ class _HomepageState extends State<Homepage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Padding(
-                  padding: EdgeInsets.only(bottom: 20),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 20),
                   child: Text(
                     "Today",
                     style: TextStyle(
-                        color: Colors.white,
+                        color: Theme.of(context).colorScheme.primary,
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
                         fontFamily: 'PT_Sans'),
@@ -156,14 +157,15 @@ class _HomepageState extends State<Homepage> {
                 MaterialButton(
                   height: deviceHeight * 0.06,
                   minWidth: deviceWidth * 0.3,
-                  color: Colors.white,
+                  color: Theme.of(context).colorScheme.primary,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
                   onPressed: createNewTask,
                   child: Text(
                     'Add New',
-                    style: TextStyle(color: primaryColor),
+                    style:
+                        TextStyle(color: Theme.of(context).colorScheme.surface),
                   ),
                 ),
               ],
@@ -175,8 +177,8 @@ class _HomepageState extends State<Homepage> {
             padding: const EdgeInsets.only(top: 58, left: 30),
             child: Text(
               "${db.toDoList.length} Tasks",
-              style: const TextStyle(
-                color: Colors.white,
+              style: TextStyle(
+                color: Theme.of(context).colorScheme.primary,
                 fontSize: 11,
                 fontWeight: FontWeight.w200,
               ),
@@ -192,7 +194,8 @@ class _HomepageState extends State<Homepage> {
               child: Container(
                 height: deviceHeight * 0.80,
                 width: deviceWidth,
-                decoration: const BoxDecoration(color: Colors.white),
+                decoration:
+                    BoxDecoration(color: Theme.of(context).colorScheme.primary),
               ),
             ),
           ),
