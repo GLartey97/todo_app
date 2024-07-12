@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:todo_app/data/database.dart';
+import 'package:todo_app/themes/themes.dart';
 import 'package:todo_app/utils/dialog_box.dart';
 import 'package:todo_app/utils/drawer.dart';
 import 'package:todo_app/utils/todo_tiles.dart';
@@ -108,11 +109,12 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.surface,
-        iconTheme: IconThemeData(color: Theme.of(context).colorScheme.primary),
+        iconTheme: IconThemeData(
+            color: AppColors.primary), //Theme.of(context).colorScheme.primary
         title: Text(
           formattedDate,
           style: TextStyle(
-              color: Theme.of(context).colorScheme.primary,
+              color: AppColors.primary, //Theme.of(context).colorScheme.primary
               fontFamily: 'Montserrat'),
         ),
         centerTitle: true,
@@ -121,7 +123,7 @@ class _HomepageState extends State<Homepage> {
             padding: const EdgeInsets.only(right: 30),
             child: Icon(
               Icons.timer,
-              color: Theme.of(context).colorScheme.primary,
+              color: AppColors.primary, //Theme.of(context).colorScheme.primary
             ),
           ),
         ],
@@ -134,7 +136,7 @@ class _HomepageState extends State<Homepage> {
           Container(
             height: deviceHeight,
             width: deviceWidth,
-            color: Theme.of(context).colorScheme.surface,
+            color: AppColors.surface, //Theme.of(context).colorScheme.surface,
           ),
 
           //Top Layer Items
@@ -148,7 +150,8 @@ class _HomepageState extends State<Homepage> {
                   child: Text(
                     "Today",
                     style: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
+                        color: AppColors
+                            .primary, //Theme.of(context).colorScheme.primary
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
                         fontFamily: 'PT_Sans'),
@@ -157,15 +160,17 @@ class _HomepageState extends State<Homepage> {
                 MaterialButton(
                   height: deviceHeight * 0.06,
                   minWidth: deviceWidth * 0.3,
-                  color: Theme.of(context).colorScheme.primary,
+                  color:
+                      AppColors.primary, //Theme.of(context).colorScheme.primary
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
                   onPressed: createNewTask,
                   child: Text(
                     'Add New',
-                    style:
-                        TextStyle(color: Theme.of(context).colorScheme.surface),
+                    style: TextStyle(
+                        color: AppColors
+                            .surface), //Theme.of(context).colorScheme.surface),
                   ),
                 ),
               ],
@@ -178,7 +183,8 @@ class _HomepageState extends State<Homepage> {
             child: Text(
               "${db.toDoList.length} Tasks",
               style: TextStyle(
-                color: Theme.of(context).colorScheme.primary,
+                color:
+                    AppColors.primary, //Theme.of(context).colorScheme.primary
                 fontSize: 11,
                 fontWeight: FontWeight.w200,
               ),
@@ -194,8 +200,9 @@ class _HomepageState extends State<Homepage> {
               child: Container(
                 height: deviceHeight * 0.80,
                 width: deviceWidth,
-                decoration:
-                    BoxDecoration(color: Theme.of(context).colorScheme.primary),
+                decoration: BoxDecoration(
+                    color: AppColors
+                        .primary), //Theme.of(context).colorScheme.primary
               ),
             ),
           ),

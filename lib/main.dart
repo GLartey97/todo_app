@@ -12,10 +12,11 @@ void main(List<String> args) async {
   await Hive.openBox('mybox');
 
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => ThemeProvider(),
-      child: const MyApp(),
-    ),
+    //ChangeNotifierProvider(
+    //create: (context) => ThemeProvider(),
+    //child:
+    const MyApp(),
+    //),
   );
 }
 
@@ -24,9 +25,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: Provider.of<ThemeProvider>(context).themeData,
-      home: const SplashScreen1(),
+    return const MaterialApp(
+      //theme: Provider.of<ThemeProvider>(context).themeData,
+      home: SplashScreen1(),
     );
   }
 }

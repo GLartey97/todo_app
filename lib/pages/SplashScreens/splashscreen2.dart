@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/pages/SplashScreens/splashscreen3.dart';
+import 'package:todo_app/themes/themes.dart';
 import 'package:todo_app/utils/animation/splash_animation.dart';
 import 'package:todo_app/utils/page_route/fade_page_route.dart';
 
@@ -56,8 +57,8 @@ class _SplashScreen2State extends State<SplashScreen2>
       child: Container(
           height: deviceHeight,
           width: deviceWidth,
-          decoration:
-              BoxDecoration(color: Theme.of(context).colorScheme.surface),
+          decoration: BoxDecoration(
+              color: AppColors.surface), //Theme.of(context).colorScheme.surface
           child: Center(
             child: Container(
               height: deviceHeight * 1,
