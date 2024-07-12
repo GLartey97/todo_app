@@ -57,7 +57,7 @@ class _SplashScreen2State extends State<SplashScreen2>
       child: Container(
           height: deviceHeight,
           width: deviceWidth,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               color: AppColors.surface), //Theme.of(context).colorScheme.surface
           child: Center(
             child: Container(

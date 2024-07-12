@@ -166,7 +166,7 @@ class _HomepageState extends State<Homepage> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   onPressed: createNewTask,
-                  child: Text(
+                  child: const Text(
                     'Add New',
                     style: TextStyle(
                         color: AppColors

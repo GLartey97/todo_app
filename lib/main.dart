@@ -1,8 +1,8 @@
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:provider/provider.dart';
+import 'package:todo_app/data/database.dart';
 import 'package:todo_app/pages/SplashScreens/splashscreen1.dart';
-import 'package:todo_app/themes/theme_provider.dart';
 
 void main(List<String> args) async {
   //initiate the hive
@@ -12,10 +12,17 @@ void main(List<String> args) async {
   await Hive.openBox('mybox');
 
   runApp(
-    //ChangeNotifierProvider(
-    //create: (context) => ThemeProvider(),
-    //child:
-    const MyApp(),
+    // MultiProvider(
+    //   providers: [
+    //     ChangeNotifierProvider(create: (_) => ThemeProvider()),
+    //     ChangeNotifierProvider(create: (_) => HabitDatabase()),
+    //   ],
+    //   child:
+    ChangeNotifierProvider(
+      create: (context) => HabitDatabase(),
+      child: const MyApp(),
+    ),
+
     //),
   );
 }
